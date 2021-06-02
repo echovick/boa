@@ -1,0 +1,786 @@
+/* 
+    Theme Name: Business Of Agriculture Theme
+    Author: SAEDConnect
+    Description: Wordpress theme for the business of agriculture website
+    Version: 1.0.0
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif; */
+
+body,
+html {
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* Font styles */
+.txt-xsm {
+	font-size: 10px;
+}
+.txt-sm {
+	font-size: 12px;
+}
+.txt-md {
+	font-size: 15px;
+}
+.txt-lg {
+	font-size: 20px;
+}
+.txt-xlg {
+	font-size: 25px;
+}
+.txt-normal {
+	font-weight: 300;
+}
+.txt-thin {
+	font-weight: 100;
+}
+.txt-bold {
+	font-weight: bold;
+}
+.txt-dark {
+	color: black;
+}
+.txt-white {
+	color: white;
+}
+.title {
+	font-family: "Roboto Slab", serif;
+}
+.text {
+	font-family: "Roboto", sans-serif;
+}
+
+/* Width styles */
+.w-100 {
+	width: 100%;
+}
+.w-90 {
+	width: 90%;
+}
+.w-80 {
+	width: 80%;
+}
+.w-70 {
+	width: 70%;
+}
+.w-60 {
+	width: 60%;
+}
+.w-50 {
+	width: 50%;
+}
+.w-40 {
+	width: 40%;
+}
+.w-30 {
+	width: 30%;
+}
+.w-20 {
+	width: 20%;
+}
+.w-10 {
+	width: 10%;
+}
+
+.comments-section,
+.expert-comments-top {
+	background: #ffffff;
+}
+
+/* Colors styling */
+.txt-grey {
+	color: #8c8c8c;
+}
+.txt-blue {
+	color: #00aeef;
+}
+.txt-red {
+	color: #ee1c28;
+}
+.bg-blue {
+	background: #00aeef;
+}
+.bg-red {
+	background: #ee1c28;
+}
+.txt-green {
+	color: #22833d;
+}
+.bg-green {
+	background: #22833d;
+}
+.bg-white {
+	background: #ffffff;
+}
+
+nav {
+	margin: 0px !important;
+	padding: 0% 6% 0% 6%;
+	border-bottom: 1px solid rgba(34, 131, 61, 0.7);
+}
+nav img {
+	width: auto;
+	height: 90px;
+}
+.agendas img{
+	height: 215.8px !important;
+}
+.nav-logo {
+	padding: 5% 0% 5% 0%;
+}
+.nav-main .nav-item {
+	padding: 4% 3% 3% 3%;
+	border-left: 1px solid rgba(34, 131, 61, 0.7);
+	width:300px;
+}
+.nav-main .nav-item:hover {
+	padding: 4% 3% 3% 3%;
+	border-left: 1px solid rgba(34, 131, 61, 0.7);
+	background: #22833d;
+	color: white;
+}
+main {
+	margin: 0px !important;
+	background-image: url("assets/imgs/lines-background.png");
+	width: 100% !important;
+	height: 100% !important;
+	background-position: center !important;
+	/* background-repeat: no-repeat !important;
+    background-size: cover !important; */
+}
+.top-section {
+	padding: 4% 7% 4% 8%;
+	width: 65%;
+}
+.top-section .title,
+.agenda-section .title:first-child {
+	font-size: 55px;
+	line-height: 60px !important;
+}
+.top-section a,
+.agenda-section a {
+	text-decoration: none;
+}
+.top-section a:hover,
+.agenda-section a:hover, 
+.expert-reviews-section a:hover,
+.partners-section a:hover,
+.sessions-page a:hover,
+.expert-comments-top a:hover {
+	text-decoration: none;
+	color: #00aeef;
+	background: transparent;
+	border: 1px solid #00aeef;
+}
+.stats-section {
+	padding: 0% 7% 0% 8%;
+}
+.picture-info-section {
+	margin-top: -10px !important;
+	padding: 0% 7% 0% 8%;
+}
+.picture-info-section .top-box {
+	padding: 5% 5% 5% 5%;
+}
+.picture-info-section .img-bg {
+	padding: 10% 5% 5% 5%;
+	height: 570px;
+	width: 100%;
+	position: relative;
+}
+.picture-info-section .info-box {
+	width: 45%;
+}
+a:hover{
+	text-decoration: none !important;
+}
+.float-left {
+	float: left;
+	margin-bottom: 10%;
+}
+.float-right {
+	float: right;
+	margin-top: 20%;
+}
+
+/* Button Styles */
+.button {
+	padding: 2% 4% 2% 4%;
+	border-radius: 12px;
+}
+.expert-comments-top div a.button,
+.items-covered div a.button,
+.sessions-page div a.button,
+.agenda-section div a.button,
+.expert-reviews-section div a.button,
+.partners-section div a.button,
+.faq-section div a.button {
+	padding: 1% 2% 1% 2%;
+}
+.round-button {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #00aeef;
+	color: white;
+	/* padding:2% 2% 2% 2%; */
+	font-size: 50px;
+	float: right;
+	text-align: center;
+	padding: 1% 5% 5% 5%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0% 10% 10% 0%;
+}
+.agenda-section div {
+	padding: 0% 7% 0% 8%;
+}
+.expert-comments-top {
+	padding: 5% 7% 0% 8%;
+}
+.dotted-border-bottom {
+	border-bottom: 1px dashed #ffffff;
+}
+
+.dotted-border-bottom-dark {
+	border-bottom: 1px dashed #060606 !important;
+}
+.dotted-border-top-dark {
+	border-top: 1px dashed #060606 !important;
+}
+
+.comments-section .dotted-border-bottom-dark {
+	border-bottom: 1px dashed #00aeef !important;
+}
+.comments-section .dotted-border-top-dark {
+	border-top: 1px dashed #00aeef !important;
+}
+
+.agendas {
+	background: #ffffff;
+	border-top: 1px dashed #00aeef;
+}
+.agendas .badge-date {
+	margin: 0px auto;
+	margin-right: 5%;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+	background-color: transparent;
+	color: auto;
+	cursor: pointer;
+	width: 100%;
+	font-size: 25px !important;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.9s !important;
+}
+
+.agendas .accordion {
+	padding-left: 8%;
+	padding-right: 8%;
+}
+.agendas .panel {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/* .active, .accordion:hover {
+    background-color: #ccc;
+  } */
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+	padding: 0 18px;
+	background-color: transparent;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+.accordion::before {
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f067";
+	font-size: 18px;
+	color: #ffffff !important;
+	border: none;
+	float: left;
+	margin-right: 5%;
+	margin-top: 7px;
+}
+.agendas .accordion::before {
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f067";
+	font-size: 18px;
+	color: #00aeef !important;
+	border: none;
+	float: right;
+	margin-right: 5%;
+	margin-top: 7px;
+}
+
+.agenda-section .active::before, .agendas .active::before {
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f068";
+	font-size: 18px;
+}
+
+.expert-reviews-section {
+	background: linear-gradient(
+			0deg,
+			rgba(34, 131, 61, 0.4),
+			rgba(34, 131, 61, 0.4)
+		),
+		url("assets/imgs/RDESController.png");
+	background-size: cover;
+	padding: 5% 7% 5% 8%;
+	height: 1200px;
+}
+.header {
+	font-size: 45px;
+}
+.expert-cards img {
+	width: auto;
+	height: 400px;
+}
+.expert-review-right {
+	background: #ffffff;
+	padding: 3% 3% 3% 3%;
+	width: 500px;
+	height: 250px;
+	margin-top: 5%;
+	margin-left: -5%;
+}
+.expert-review-left {
+	background: #ffffff;
+	padding: 3% 3% 3% 3%;
+	width: 500px;
+	height: 250px;
+	margin-top: 5%;
+	margin-left: 0%;
+	margin-right: -5%;
+	position: absolute;
+}
+.review-pic-right {
+	float: left;
+	margin-left: 37%;
+}
+.partners-section {
+	background: linear-gradient(0deg, #9effb9, #9effb9),
+		url("assets/imgs/Group.png") !important;
+	background-size: cover !important;
+	padding: 5% 7% 5% 8%;
+	opacity: 0.8;
+}
+.partner-logo-box {
+	background: #ffffff;
+	padding: 5% 3% 5% 3%;
+	width: 170px;
+	height: 170px;
+}
+.partner-logo-box img {
+	object-fit: contain;
+}
+.faq-section {
+	background: rgba(0, 174, 239, 0.8);
+	padding: 5% 7% 5% 8%;
+}
+.faq-section .accordion {
+	background: #ffffff;
+	border: none;
+	font-size: 17px !important;
+	padding: 1% 2% 1% 2%;
+	box-sizing: border-box;
+	outline: none;
+}
+.faq-section .accordion:after {
+	content: none; /* Unicode character for "plus" sign (+) */
+	font-size: 10px !important;
+	color: #ffffff !important;
+	border: none;
+	float: left;
+	margin-right: 5%;
+	margin-top: 5px;
+}
+.faq-section .panel {
+	margin-bottom: 2%;
+	background: #ffffff;
+}
+.agendas .panel {
+	border-bottom: 1px dashed #00aeef;
+}
+.register-form-section {
+	background: #f1fbff;
+	padding: 5% 7% 5% 8%;
+	opacity: 0.9;
+}
+/* input[type="text"] {
+	background: #ffffff;
+	padding: 5% 5% 5% 5%; 
+	border: none;
+	border-radius: 15px;
+	margin-bottom: 10%;
+	width: 100%;
+	outline: none;
+	margin-left: -15px;
+} */
+
+.gform_wrapper ul li.gfield {
+	margin-top: -3% !important;
+	margin-bottom: 2% !important;
+}
+
+.gform_wrapper .gform_footer input[type="submit"] {
+	padding: 1% 4% 1% 4% !important;
+	background: #00aeef;
+	color: white;
+}
+
+.gform_wrapper input {
+	background: #ffffff;
+	padding: 5% 5% 5% 5% !important;
+	border: none;
+	border-radius: 15px;
+	/* margin-bottom: 10%; */
+	width: 100%;
+	outline: none;
+	margin-left: -15px;
+}
+
+input[type="checkbox"] {
+	margin-left: -15px;
+}
+.checkbox-group {
+	background: #ffffff;
+	padding: 5% 5% 5% 5%;
+	width: 96%;
+	border-radius: 12px;
+	margin-bottom: 5%;
+}
+select {
+	background: #ffffff;
+	padding: 2% 2% 2% 2%;
+	margin-left: -15px;
+	border-radius: 6px;
+	border: none;
+	width: 100%;
+}
+footer {
+	padding: 0% 7% 0% 8%;
+	border-top: 1px dashed #22833d;
+}
+footer img {
+	width: auto;
+	height: 90px;
+}
+.partners-logo {
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+.footer-quick-links,
+.sc-links {
+	padding: 3% 5% 3% 5%;
+	border-left: 1px dashed #22833d;
+}
+.footer-quick-links ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.footer-quick-links li {
+	border-bottom: 1px dashed #22833d;
+	padding: 5% 5% 5% 0%;
+}
+.live-session {
+	padding: 0% 7% 3% 8%;
+}
+.featured-speakers {
+	padding: 5% 7% 3% 8%;
+	background: #00aeef;
+}
+.green-box {
+	padding: 3% 3% 3% 3%;
+	background: #9effb9;
+	border-radius: 6px;
+}
+.green-box .img {
+	height: 100%;
+}
+.img .badge {
+	padding: 3% 5% 3% 5%;
+	border-radius: 12px;
+	float: right;
+	margin: 5% 5% 5% 5%;
+}
+.next-session {
+	border-top: 1px solid rgba(34, 131, 61, 0.7);
+	margin-top: 4%;
+	padding-top: 2%;
+}
+.experts-page {
+	background: #9effb9;
+	padding: 4% 7% 3% 8%;
+	opacity: 0.9;
+	z-index: -1 !important;
+}
+.sessions-page,
+.view-session,
+.items-covered {
+	background: #f1fbff;
+	padding: 4% 7% 3% 8%;
+	opacity: 0.9;
+	z-index: -1 !important;
+}
+.view-session,
+.items-covered {
+	border-top: 1px dashed #00aeef;
+}
+.video-frame img {
+	height: 500px;
+	width: 100%;
+}
+.experts,
+.sessions {
+	margin: 0px !important;
+	background-image: url("assets/imgs/lines-background-2.png");
+	width: 100% !important;
+	height: 100% !important;
+	background-position: center !important;
+	position: relative;
+	z-index: 0 !important;
+}
+.experts-register {
+	margin-top: 10%;
+}
+
+.footer-quick-links a {
+	color: black;
+}
+
+/* Style the tab */
+.content .tab {
+	overflow: hidden;
+	margin-left: -2%;
+	/* border: 1px solid #ccc; */
+	/* background-color: #f1f1f1; */
+}
+
+/* Style the buttons that are used to open the tab content */
+.content .tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	/* cursor: pointer; */
+	padding: 1% 2% 1% 2%;
+	transition: 0.3s;
+	color: #22833d;
+	margin-right: 5%;
+}
+
+#liveSession .img {
+	min-height: 500px !important;
+	width: 90% !important;
+}
+
+.tabcontent .img {
+	min-height: 300px;
+	width: auto;
+	background-size: cover !important;
+	object-fit: contain !important;
+}
+
+.badge-date {
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin: 5% 5% 5% 5%;
+	border-radius: 50%;
+}
+
+.badge-live {
+	float: right;
+	padding: 2% 4% 2% 4%;
+	border-radius: 12px;
+	margin: 5% 5% 5% 5%;
+}
+
+.badge-watch-now {
+	float: right;
+	padding: 2% 4% 2% 4%;
+	border-radius: 12px;
+	margin: 5% 5% 5% 5%;
+}
+
+.img-1 {
+	background: url("assets/imgs/grass-img.png");
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #ddd;
+	background: #ffffff;
+	border: 1px solid #22833d;
+	box-sizing: border-box;
+	border-radius: 20px;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background-color: #ccc;
+	background: #ffffff;
+	border: 1px solid #22833d;
+	box-sizing: border-box;
+	border-radius: 20px;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 5% 5% 5% 0%;
+	width: 100%;
+	border-top: none;
+}
+
+.tabcontent {
+	animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+nav a,
+a {
+	color: black;
+	text-decoration: none;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.items-covered ul,
+.agendas ul {
+	list-style-image: url("assets/imgs/icons/list-icon.png");
+}
+.items-covered .button {
+	border: 1px solid #010101;
+	text-decoration: none;
+}
+.items-covered .button a:hover {
+	text-decoration: none;
+}
+
+.speaker-img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-size: cover;
+}
+
+.modal .speaker-img{
+	width:20%;
+	height: auto;
+}
+
+.modal .fa-linkedin:hover{
+	color: #22833d;
+}
+
+.badge-moderator {
+	border-radius: 10px;
+	padding: 2% 4% 2% 4% !important;
+	background: #ffffff;
+	color: #00aeef;
+}
+.badge-panelist {
+	border-radius: 10px;
+	padding: 2% 4% 2% 4% !important;
+	background: #22833d;
+	color: #ffffff;
+}
+
+.expert-img {
+	height: 75px;
+	width: 75px;
+	border-radius: 50%;
+	background-size: cover;
+}
+.comments-section .row {
+	padding: 0% 8% 0% 8%;
+}
+.comments-section .inner {
+	padding: 5% 5% 5% 5%;
+	border-right: 1px dashed #00aeef;
+	margin: 0px !important;
+}
+.comments-section .main-img {
+	height: 200px;
+	width: 100%;
+	background-size: cover;
+	object-fit: cover;
+}
+.winners-img {
+	width: 100%;
+	max-height: 200px;
+	background-size: contain;
+	object-fit: cover;
+}
+
+/* Mobile nav */
+/* Style the navigation menu */
+.topnav {
+	overflow: hidden;
+	background-color: #00aeef;
+	position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+	display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+	color: white;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+	background: transparent;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+	background-color: transparent;
+}
+
+/* Style the active link (or home/logo) */
+.topnav .active {
+	background-color: #00aeef;
+	color: white;
+}
+
+.date-circle {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 50%;
+}

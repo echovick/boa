@@ -1,0 +1,230 @@
+.mobile {
+	display: none;
+}
+@media only screen and (max-width: 600px) {
+	.tabcontent .img {
+		min-height: 265px !important;
+	}
+	.desktop {
+		display: none !important;
+	}
+	.mobile {
+		display: block !important;
+	}
+
+	.stats-section div:first-child {
+		width: 100% !important;
+	}
+
+	.picture-info-section .info-box {
+		width: 100% !important;
+	}
+
+	.float-left {
+		float: left;
+		margin-bottom: 5% !important;
+	}
+	.float-right {
+		margin-bottom: 5% !important;
+		margin-top: 5% !important;
+	}
+
+	.modal .speaker-img{
+		width:20% !important;
+		height: auto;
+	}
+
+	.info-box .img-bg {
+		height: 400px !important;
+	}
+
+	.expert-review {
+		background: #ffffff;
+		padding: 5% 5% 5% 5%;
+		width: 500px;
+		height: auto;
+	}
+
+	form {
+		width: 100% !important;
+	}
+	.partners-logo img {
+		width: auto !important;
+		height: 50px !important;
+	}
+	.top-section {
+		padding-top: 5% !important;
+		width: 100% !important;
+	}
+	.top-section .title {
+		font-size: 25px !important;
+		line-height: 30px !important;
+		width: 100% !important;
+	}
+
+	.agenda-section .title {
+		font-size: 15px !important;
+		line-height: 25px !important;
+	}
+	.accordion {
+		padding-top: 5% !important;
+		padding-bottom: 5% !important;
+	}
+
+	.round-button {
+		width: 50px !important;
+		height: 50px !important;
+		font-size: 27px !important;
+	}
+
+	p {
+		width: 100% !important;
+	}
+
+	.txt-sm {
+		font-size: 12px !important;
+	}
+	.txt-md {
+		font-size: 13px !important;
+	}
+	.txt-lg {
+		font-size: 15px !important;
+	}
+	.txt-xlg {
+		font-size: 18px !important;
+	}
+
+	a.button {
+		padding: 3% 3% 3% 3% !important;
+	}
+
+	.footer-quick-links,
+	.sc-links {
+		border: none !important;
+	}
+
+	.expert-reviews-section {
+		background: linear-gradient(
+				0deg,
+				rgba(34, 131, 61, 0.4),
+				rgba(34, 131, 61, 0.4)
+			),
+			url("assets/imgs/RDESController.png");
+		background-size: cover;
+		padding: 5% 7% 5% 8%;
+		height: 1350px;
+	}
+	.header {
+		font-size: 25px !important;
+	}
+	.faq-section .accordion {
+		padding: 2% 5% 2% 5%;
+	}
+
+	.agendas .accordion {
+		padding-bottom: 10% !important;
+	}
+	.agendas .badge-date {
+		width: 50px !important;
+		height: 50px !important;
+	}
+	.agendas .accordion.title {
+		font-size: 20px !important;
+	}
+    .video-frame img{
+        height: auto !important;
+        width: 100% !important;
+    }
+    .comments-section .inner {
+        border: none !important;
+        border-bottom: 1px dashed #00aeef !important;
+    }
+    .nav-logo img{
+        width:auto !important;
+        height:45px !important;
+        object-fit: cover !important;
+    }
+	.topnav .active{
+		background: #ffffff !important;
+		border-bottom: 1px dashed #00aeef !important;
+	}
+	.topnav a.icon {
+		color:#00aeef !important;
+	}
+	.green-box{
+		width: 100% !important;
+		padding: 5% 0% 5% 5% !important;
+	}
+	.green-box .img{
+		margin-bottom: 2% !important;
+		height:200px !important;
+		width: 100% !important;
+		object-fit: contain !important;
+	}
+	.green-box .mt-5{
+		margin-top: 0px !important;
+	}
+    a.icon{
+        font-size: 25px !important;
+    }
+    #myLinks a{
+        border-bottom: 1px dashed #ffffff !important;
+        font-size:15px !important;
+        font-family: "Roboto Slab", serif !important;
+    }
+    .agenda-section div .pr-5{
+        /* padding: 0% 7% 0% 8% !important; */
+        padding:0px !important;
+    }
+	.sessions .agendas .panel{
+		padding:0% !important;
+		font-size: 10px !important;
+	}
+	.agendas .panel .item{
+		padding-right: 0px !important;
+		padding-left:20px !important;
+	}
+	#liveSession .img{
+		width: 100% !important;
+		height:300px !important;
+	}
+	.speaker-img{
+		width: 100% !important;
+		height: auto !important;
+	}
+	.badge-date{
+		padding-top:2% !important;
+	}
+	.accordion::before {
+		font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f067";
+		font-size: 15px;
+		color: #ffffff !important;
+		border: none;
+		float: left;
+		margin-right: 5%;
+		margin-top: 0px !important;
+	}
+	.faq-section .accordion::before {
+		font-family: "Font Awesome 5 Free"; font-weight: 900; content: "";
+		font-size: 15px;
+		color: #ffffff !important;
+		border: none;
+		float: left;
+		margin-right: 5%;
+		margin-top: 0px !important;
+	}
+	.agendas .accordion::before {
+		font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f067";
+		font-size: 15px;
+		color: #00aeef !important;
+		border: none;
+		float: right;
+		margin-right: 5%;
+		margin-top: 2% !important;
+	}
+	
+	.agenda-section .active::before, .agendas .active::before {
+		font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f068";
+		font-size: 15px;
+	}
+}
