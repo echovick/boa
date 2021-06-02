@@ -91,7 +91,7 @@
                         <p class="text-center txt-text mx-auto txt-sm mt-2"><?php echo $person_name.', '.$title.' ('.$company.')'?></p>
                         <p class="text-center txt-text mx-auto txt-md mt-2"><?php echo $person_description?></p>
                         <div class="row">
-                            <a href="<?php echo $linkedin_url?>" class="mx-auto text-center"><i class="fab fa-linkedin txt-xlg txt-blue"></i></a>
+                            <a href="<?php echo $linkedin_url?>" target="_blank" class="mx-auto text-center"><i class="fab fa-linkedin txt-xlg txt-blue"></i></a>
                         </div>
                     </div>
                     <div class="modal-footer">
