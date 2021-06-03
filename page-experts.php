@@ -31,7 +31,7 @@
                         $company = rwmb_meta('company');
                 ?>
             <div class="col-lg-4 col-md-4 col-6 mb-4">
-                <a href="" type="button" data-toggle="modal" data-target="#myModal<?php echo get_the_id();?>">
+                <a data-toggle="modal" data-target="#myModal<?php echo get_the_id();?>">
                     <p class="txt-green title txt-lg text-center"><?php echo $person_name?></p>
                     <img src="<?php echo $image?>" alt="" class="w-90">
                     <p class="text-center txt-dark txt-normal txt-md text mt-3">
@@ -94,8 +94,8 @@
                             <a href="<?php echo $linkedin_url?>" target="_blank" class="mx-auto text-center"><i class="fab fa-linkedin txt-xlg txt-blue"></i></a>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-footer justify-content-center">
+                        <a class="txt-white txt-sm my-3 bg-blue txt-bold button mx-auto" data-dismiss="modal">Close</a>
                     </div>
                 </div>
             </div>
