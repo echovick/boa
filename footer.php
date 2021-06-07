@@ -32,9 +32,9 @@
                 </div>
                 <div class="col-lg-3 col-md-3 col-12 sc-links">
                     <div class="d-flex">
-                        <i class="fab fa-facebook-square txt-xlg txt-blue mr-5"></i>
-                        <i class="fab fa-instagram-square txt-xlg txt-blue mr-5"></i>
-                        <i class="fab fa-twitter-square txt-xlg txt-blue mr-5"></i>
+                        <a href="https://www.facebook.com/psagnigeria" target="_blank"><i class="fab fa-facebook-square txt-xlg txt-blue mr-5"></i></a>
+                        <a href="https://www.instagram.com/psag_nigeria" target="_blank"><i class="fab fa-instagram-square txt-xlg txt-blue mr-5"></i></a>
+                        <a href="https://twitter.com/PsagNigeria" target="_blank"><i class="fab fa-twitter-square txt-xlg txt-blue mr-5"></i></a>
                         <i class="fab fa-linkedin txt-xlg txt-blue mr-5"></i>
                     </div>
                 </div>

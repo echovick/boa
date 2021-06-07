@@ -35,9 +35,9 @@
                         <div class="row title txt-md mb-5">Sessions</div>
                         <div class="row text txt-sm">Delve into profitable Agric value chains</div>
                     </a>
-                    <a href="<?php echo site_url('influencers')?>" class="nav-item">
-                        <div class="row title txt-md mb-5">Influencers</div>
-                        <div class="row text txt-sm">3 days, 15+ Speakers, 7 Value chain sessions</div>
+                    <a href="<?php echo site_url('ask-a-question')?>" class="nav-item">
+                        <div class="row title txt-md mb-5">Ask a Question</div>
+                        <div class="row text txt-sm">Get insights on the aspects of agriculture you are curious about</div>
                     </a>
                     <a href="<?php echo site_url('register')?>" class="nav-item">
                         <div class="row title txt-md mb-5">Register</div>
