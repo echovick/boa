@@ -40,6 +40,7 @@
                             $time = $the_session->time;
                             $google_calendar_link = $the_session->google_calendar_link;
                             $ics_file = $the_session->ics_file;
+                            $ics_file = wp_get_attachment_url($ics_file);
                     ?>
                         <div class="row w-100 item px-5 py-4 dotted-border-bottom-dark mt-4">
                             <div class="col-md-3 col-lg-3 col-4">
