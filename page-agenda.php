@@ -46,13 +46,13 @@
                             <div class="col-md-3 col-lg-3 col-4">
                                 <img src="<?php echo $session_image_thumbnail?>" alt="" class="w-100">
                             </div>
-                            <div class="col-lg-9 col-md-9 col-8">
+                            <div class="col-lg-9 col-md-9 col-12">
                                 <p class="text txt-md txt-green">
                                     <i class="fas fa-clock mr-2"></i>
                                     <?php echo $time;?>
                                     <span class="txt-blue ml-3" data-toggle="collapse" href="#demo<?php echo $id;?>"><u>Remind Me</u></span>
                                     <div id="demo<?php echo $id;?>" class="collapse mb-3" style="padding:0px !important;">
-                                        <a href="<?php echo $google_calendar_link?>" target="_blank" class="text txt-sm txt-dark"><u>Google Calendar Link</u></a>
+                                        <a target="_blank" href="<?php echo $google_calendar_link?>" class="text txt-sm txt-dark"><u>Google Calendar Link</u></a>   
                                         <a href="<?php echo $ics_file?>" target="_blank" class="text txt-sm txt-dark" download><u>Download ICS File</u></a>
                                     </div>
                                 </p>
@@ -81,12 +81,12 @@
         <!-- Rehister form section -->
         <div class="register-form-section">
             <p class="title header txt-blue">Register to Attend</p>
-            <p class="txt-normal text txt-lg w-70">Gain access to session links and informative newsletters in a few easy steps. </p>
-            <form action="" class="px-1 py-3 my-5 w-70">
+            <p class="txt-normal text txt-lg w-70">Save your spot in the sessions you would love to attend</p>
+            <div class="px-1 py-3 my-5 w-70">
                 <?php
                     echo do_shortcode( "[gravityform id='1' title='false' description='false' ajax='false']" );
                 ?>
-            </form>
+            </div>
         </div>
     </main>
 <?php echo get_footer()?>

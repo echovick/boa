@@ -1,7 +1,26 @@
 .mobile {
-	display: none;
+	display: none !important;
 }
 @media only screen and (max-width: 600px) {
+	.question-session-box{
+		height:auto !important;
+	}
+	.botton-ask-question{
+		width: auto !important;
+		padding: 3% 3% 3% 3% !important;
+	}
+	.question-session-box{
+		width: 100% !important;
+	}
+	.botton-ask-question .txt-sm{
+		font-size: 10px !important;
+	}
+	.agendas .item img{
+		display: none !important;
+	}
+	.agendas .item .col-12{
+		margin-left:5% !important;
+	}
 	.tabcontent .img {
 		min-height: 265px !important;
 	}

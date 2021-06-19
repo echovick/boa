@@ -55,12 +55,12 @@
             <!-- Rehister form section -->
             <div class="experts-register">
                 <p class="title header txt-blue">Register to Attend</p>
-                <p class="txt-normal text txt-lg w-70">Gain access to session links and informative newsletters in a few easy steps. </p>
-                <form action="" class="px-1 py-3 my-5 w-70">
-                <?php
-                    echo do_shortcode( "[gravityform id='1' title='false' description='false' ajax='false']" );
-                ?>
-            </form>
+                <p class="txt-normal text txt-lg w-70">Save your spot in the sessions you would love to attend</p>
+                <div class="px-1 py-3 my-5 w-70">
+                    <?php
+                        echo do_shortcode( "[gravityform id='1' title='false' description='false' ajax='false']" );
+                    ?>
+                </div>
             </div>
         </div>
     </main>
@@ -80,7 +80,7 @@
             <div class="modal-content bg-blue shadow">
                 <div class="modal-body bg-blue">
                     <p class="title txt-white txt-md w-70">Ask a question on <?php echo $session_title?></p>
-                    <p class="text txt-dark txt-sm">Feel free to add as many questions you have about the business of production & bio fortification.</p>
+                    <p class="text txt-dark txt-sm">Feel free to add as many questions you have about <?php echo $session_title;?></p>
                     <form action="" method="POST">
                         <input type="text" name="topic" value="<?php echo $session_title;?>" hidden>
                         <textarea name="question" class="w-100 ask-question-textarea text txt-dark txt-sm" id="" cols="30" rows="10" required>Your question</textarea>

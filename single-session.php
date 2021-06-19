@@ -7,8 +7,20 @@
             <p class="txt-blue txt-md title">Session</p>
             <p class="title txt-dark txt-xlg"><?php echo rwmb_meta('session_title')?></p>
             <p class="text txt-normal txt-lg w-60"><?php echo rwmb_meta('short_snippet')?></p>
-            <div class="row pl-3">
-                <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button">Register to attend</a>
+            <div class="d-flex desktop">
+                <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3">Register to attend</a>
+                <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3" data-toggle="modal" data-target="#questionform">Ask a Question</a>
+            </div>
+            <div class="d-flex mobile">
+                <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3">Register to attend</a>
+                <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3" data-toggle="modal" data-target="#questionform">Ask a Question</a>
+            </div>
+            <div style="vertical-align:middle !important;" class="mt-2">
+                <span class="txt-blue txt-sm" data-toggle="collapse" href="#demo"><u>Remind Me</u></span>
+                <div id="demo" class="collapse mb-3" style="padding:0px !important;">
+                    <a target="_blank" href="<?php echo rwmb_meta('google_calendar_link')?>" class="text txt-sm txt-dark"><u>Google Calendar Link</u></a>   
+                    <a href="<?php echo rwmb_meta('ics_file')?>" target="_blank" class="text txt-sm txt-dark" download><u>Download ICS File</u></a>
+                </div>
             </div>
         </div>
         <div class="view-session">
@@ -67,7 +79,7 @@
         </div>
         <div class="featured-speakers">
             <p class="txt-white title header">Featured Speakers</p>
-            <p class="text txt-lg w-80 txt-normal txt-dark txt-white">Our team of learning experts have designed a suite of practical programs that develop both your execution excellence capabilities and enable you to stay a step ahead.</p>
+            <p class="text txt-lg w-80 txt-normal txt-dark txt-white">Meet the value chain experts</p>
             <div class="row mt-5 pt-4">
                 <?php
                     $add_facilitator_group = rwmb_meta('add_facilitator_group');
@@ -91,14 +103,34 @@
         <!-- Rehister form section -->
         <div class="register-form-section" id="registerform">
             <p class="title header txt-blue">Register to Attend</p>
-            <p class="txt-normal text txt-lg w-70">Gain access to session links and informative newsletters in a few easy steps. </p>
-            <form action="" class="px-1 py-3 my-5 w-70">
+            <p class="txt-normal text txt-lg w-70">Save your spot in the sessions you would love to attend</p>
+            <div class="px-1 py-3 my-5 w-70">
                 <?php
                     echo do_shortcode( "[gravityform id='1' title='false' description='false' ajax='false']" );
                 ?>
-            </form>
+            </div>
         </div>
     </main>
+    <div id="questionform" class="modal bg-blue modal-ask-question fade" role="dialog">
+        <div class="modal-dialog bg-blue">
+            <!-- Modal content-->
+            <div class="modal-content bg-blue shadow">
+                <div class="modal-body bg-blue">
+                    <p class="title txt-white txt-md w-70">Ask a question on <?php echo rwmb_meta('session_title')?></p>
+                    <p class="text txt-dark txt-sm">Feel free to add as many questions you have about <?php echo rwmb_meta('session_title')?></p>
+                    <form action="" method="POST">
+                        <input type="text" name="topic" value="<?php echo rwmb_meta('session_title');?>" hidden>
+                        <textarea name="question" class="w-100 ask-question-textarea text txt-dark txt-sm" id="" cols="30" rows="10" required>Your question</textarea>
+                        <input type="text" name="email" id="" class="ask-question-input w-100 txt-dark txt-sm text" placeholder="Your Email Address" required>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" name="ask-question" class="mt-3 button botton-ask-question txt-sm title txt-white">Submit</button>
+                            <button class="mt-3 button botton-ask-question txt-sm title txt-white" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php
         endwhile;
     ?>

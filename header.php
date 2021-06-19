@@ -25,23 +25,23 @@
                 <div class="d-flex nav-main">
                     <a href="<?php echo site_url('agenda')?>" class="nav-item">  
                         <div class="row title txt-md mb-5">Agenda</div>
-                        <div class="row text txt-sm">Explore sessions and uncover opportunities across 3 days</div>
+                        <div class="row text txt-sm">3 days of impactful sessions</div>
                     </a>
                     <a href="<?php echo site_url('experts')?>" class="nav-item">
                         <div class="row title txt-md mb-5">Speakers</div>
-                        <div class="row text txt-sm">Meet our industry experts</div>
+                        <div class="row text txt-sm">Learn from practitioners in the industry</div>
                     </a>
                     <a href="<?php echo site_url('sessions')?>" class="nav-item">
                         <div class="row title txt-md mb-5">Sessions</div>
-                        <div class="row text txt-sm">Delve into profitable Agric value chains</div>
+                        <div class="row text txt-sm">Explore what will be covered in each session</div>
                     </a>
                     <a href="<?php echo site_url('ask-a-question')?>" class="nav-item">
                         <div class="row title txt-md mb-5">Ask a Question</div>
-                        <div class="row text txt-sm">Get insights on the aspects of agriculture you are curious about</div>
+                        <div class="row text txt-sm">Got a question? Ask our experts</div>
                     </a>
                     <a href="<?php echo site_url('register')?>" class="nav-item">
                         <div class="row title txt-md mb-5">Register</div>
-                        <div class="row text txt-sm">Gain access to all event activities</div>
+                        <div class="row text txt-sm">Reserve your space. 100% free</div>
                     </a>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                 <a href="<?php echo site_url('agenda')?>">Agenda</a>
                 <a href="<?php echo site_url('experts')?>">Speakers</a>
                 <a href="<?php echo site_url('sessions')?>">Sessions</a>
-                <a href="<?php echo site_url('pitch')?>">Pitch</a>
+                <a href="<?php echo site_url('ask-a-question')?>">Ask a Question</a>
                 <a href="<?php echo site_url('register')?>">Register</a>
             </div>
             <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->

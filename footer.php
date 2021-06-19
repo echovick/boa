@@ -3,12 +3,12 @@
                 <div class="col-lg-5 col-md-5 col-12 partners-logo">
                     <div class="row">
                         <div class="d-flex justify-content-center">
-                            <img src="<?php echo get_theme_file_uri('assets/imgs/logos/BoA Logo 1.png')?>" alt="" class="mx-4">
-                            <img src="<?php echo get_theme_file_uri('assets/imgs/logos/PSAG-Logo only 1.png')?>" alt="" class="mx-4">
-                            <img src="<?php echo get_theme_file_uri('assets/imgs/logos/image 17.png')?>" alt="" class="mx-4">
+                            <img src="<?php echo get_theme_file_uri('assets/imgs/logos/BoA Logo 1.png');?>" alt="" class="mx-4">
+                            <img src="<?php echo get_theme_file_uri('assets/imgs/logos/PSAG-Logo only 1.png');?>" alt="" class="mx-4">
+                            <img src="<?php echo get_theme_file_uri('assets/imgs/logos/image 17.png');?>" alt="" class="mx-4">
                         </div>
                     </div>
-                    <p class="text txt-normal txt-dark text-left mt-5">Our team of learning experts have designed a suite of practical programs that develop both your execution excellence capabilities and enable you to stay a step ahead.</p>
+                    <p class="text txt-normal txt-dark text-left mt-5">Explore our virtual information sessions anchored by experts to spotlight opportunities available across various agriculture value chains and how to harness them for income generation</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-12 footer-quick-links">
                     <p class="txt-blue text txt-md txt-normal txt-bold mb-4">Quick Links</p>
@@ -21,7 +21,7 @@
                             if(!empty($top_links)){
                                 foreach($top_links as $links){
                                     $label = get_term_meta($links->term_id,'link_text',true);
-                                    $url = get_term_meta($links->term_id,'_link_url',true);
+                                    $url = get_term_meta($links->term_id,'link_url',true);
                         ?>
                                 <li><a href="<?php echo $url?>"><?php echo $label?></a></li>
                         <?php
@@ -35,7 +35,7 @@
                         <a href="https://www.facebook.com/psagnigeria" target="_blank"><i class="fab fa-facebook-square txt-xlg txt-blue mr-5"></i></a>
                         <a href="https://www.instagram.com/psag_nigeria" target="_blank"><i class="fab fa-instagram-square txt-xlg txt-blue mr-5"></i></a>
                         <a href="https://twitter.com/PsagNigeria" target="_blank"><i class="fab fa-twitter-square txt-xlg txt-blue mr-5"></i></a>
-                        <i class="fab fa-linkedin txt-xlg txt-blue mr-5"></i>
+                        <a href="https://www.linkedin.com/company/psagnigeria/about/"><i class="fab fa-linkedin txt-xlg txt-blue mr-5"></i></a>
                     </div>
                 </div>
             </div>

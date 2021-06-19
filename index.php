@@ -227,7 +227,7 @@
                                 </p>
                                 <p class="txt-white txt-sm" data-toggle="collapse" href="#demo<?php echo $id;?>"><i class="fas fa-clock mr-1"></i><u>Remind Me</u></p>
                                 <div id="demo<?php echo $id;?>" class="collapse mb-3" style="padding:0px !important;">
-                                    <a href="<?php echo $google_calendar_link?>" target="_blank" class="text txt-sm txt-dark"><u>Google Calendar Link</u></a>
+                                    <a target="_blank" href="<?php echo $google_calendar_link?>" class="text txt-sm txt-dark"><u>Google Calendar Link</u></a>
                                     <a href="<?php echo $ics_file?>" target="_blank" class="text txt-sm txt-dark"><u>Download ICS File</u></a>
                                 </div>
                             </div>
@@ -241,7 +241,7 @@
             ?>
 
             <div class="row w-100 mt-4">
-                <a href="" class="txt-white txt-sm my-3 ml-3 bg-blue txt-bold button">Register to attend</a>
+                <a href="#registerform" class="txt-white txt-sm my-3 ml-3 bg-blue txt-bold button">Register to attend</a>
             </div>
         </div>
         <!-- Expert reviews section -->
@@ -377,12 +377,12 @@
         <!-- Rehister form section -->
         <div class="register-form-section" id="registerform">
             <p class="title header txt-blue">Register to Attend</p>
-            <p class="txt-normal text txt-lg w-70">Gain access to session links and informative newsletters in a few easy steps. </p>
-            <form action="" class="px-1 py-3 my-5 w-70">
+            <p class="txt-normal text txt-lg w-70">Save your spot in the sessions you would love to attend</p>
+            <div class="px-1 py-3 my-5 w-70">
                 <?php
                     echo do_shortcode( "[gravityform id='1' title='false' description='false' ajax='false']" );
                 ?>
-            </form>
+            </div>
         </div>
     </main>
 <?php echo get_footer()?>

@@ -786,6 +786,12 @@ a {
 	margin-bottom: 3%;
 }
 
+.gform_wrapper ul.gfield_checkbox li label{
+	width: auto !important;
+	white-space: normal !important;
+	vertical-align: top !important;
+}
+
 .info-view{
 	background: #00AEEF;
 	height: 100%;
