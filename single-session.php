@@ -13,8 +13,12 @@
                 <?php
                     $brochure_url = rwmb_meta('upload_brochure');
                     foreach($brochure_url as $brochure){$url = $brochure['url'];}
+                    if(!empty($url)){
                 ?>
-                <span class="txt-blue txt-sm pt-4"><a href="<?php echo $url;?>" target="_blank" download><u>Download Session Brochure</u></a></span>
+                    <span class="txt-blue txt-sm pt-4"><a href="<?php echo $url;?>" target="_blank" download><u>Download Session Brochure</u></a></span>
+                <?php
+                    }
+                ?>
             </div>
             <div class="d-flex mobile">
                 <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3">Register to attend</a>
@@ -22,8 +26,12 @@
                 <?php
                     $brochure_url = rwmb_meta('upload_brochure');
                     foreach($brochure_url as $brochure){$url = $brochure['url'];}
+                    if(!empty($url)){
                 ?>
-                <div class="txt-blue txt-sm pt-3"><a href="<?php echo $url?>" target="_blank" download><u>Download Session Brochure</u></a></div>
+                    <div class="txt-blue txt-sm pt-3"><a href="<?php echo $url?>" target="_blank" download><u>Download Session Brochure</u></a></div>
+                <?php
+                    }
+                ?>
             </div>
             <div style="vertical-align:middle !important;" class="mt-2">
                 <span class="txt-blue txt-sm" data-toggle="collapse" href="#demo"><u>Remind Me</u></span>
