@@ -395,15 +395,18 @@ a:hover{
 	background: rgba(0, 174, 239, 0.8);
 	padding: 5% 7% 5% 8%;
 }
-.faq-section .accordion {
+.faq-section .accordion, .items-covered .accordion {
 	background: #ffffff;
 	border: none;
 	font-size: 17px !important;
-	padding: 1% 2% 1% 2%;
+	padding: 2% 1% 1% 1%;
 	box-sizing: border-box;
 	outline: none;
 }
-.faq-section .accordion:after {
+.faq-section .accordion:before, .items-covered .accordion:before{
+	margin-right:0px !important;
+}
+.faq-section .accordion:after{
 	content: none; /* Unicode character for "plus" sign (+) */
 	font-size: 10px !important;
 	color: #ffffff !important;
@@ -412,7 +415,7 @@ a:hover{
 	margin-right: 5%;
 	margin-top: 5px;
 }
-.faq-section .panel {
+.faq-section .panel, .items-covered .panel {
 	margin-bottom: 2%;
 	background: #ffffff;
 }
@@ -767,6 +770,18 @@ a {
 	background: white;
 	border:1px solid #00AEEF;
 	color: #00AEEF;
+}
+
+.ask-question{
+	background: white !important;
+	border:1px solid #00AEEF !important;
+	color: #00AEEF !important;
+}
+.ask-question:hover{
+	background: #00AEEF !important;
+	border:1px solid white !important;
+	outline: none !important;
+	color: white !important;
 }
 
 .modal-ask-question, .modal-content{

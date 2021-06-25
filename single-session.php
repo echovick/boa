@@ -9,17 +9,31 @@
             <p class="text txt-normal txt-lg w-60"><?php echo rwmb_meta('short_snippet')?></p>
             <div class="d-flex desktop">
                 <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3">Register to attend</a>
-                <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3" data-toggle="modal" data-target="#questionform">Ask a Question</a>
+                <a href="#registerform" class="txt-white txt-sm my-3 bg-blue ask-question txt-bold button mr-3" data-toggle="modal" data-target="#questionform">Ask a Question</a>
+                <?php
+                    $brochure_url = rwmb_meta('upload_brochure');
+                    foreach($brochure_url as $brochure){$url = $brochure['url'];}
+                ?>
+                <span class="txt-blue txt-sm pt-4"><a href="<?php echo $url;?>" target="_blank" download><u>Download Session Brochure</u></a></span>
             </div>
             <div class="d-flex mobile">
                 <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3">Register to attend</a>
-                <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3" data-toggle="modal" data-target="#questionform">Ask a Question</a>
+                <a href="#registerform" class="txt-white txt-sm my-3 bg-blue ask-question txt-bold button mr-3" data-toggle="modal" data-target="#questionform">Ask a Question</a>
+                <?php
+                    $brochure_url = rwmb_meta('upload_brochure');
+                    foreach($brochure_url as $brochure){$url = $brochure['url'];}
+                ?>
+                <div class="txt-blue txt-sm pt-3"><a href="<?php echo $url?>" target="_blank" download><u>Download Session Brochure</u></a></div>
             </div>
             <div style="vertical-align:middle !important;" class="mt-2">
                 <span class="txt-blue txt-sm" data-toggle="collapse" href="#demo"><u>Remind Me</u></span>
                 <div id="demo" class="collapse mb-3" style="padding:0px !important;">
                     <a target="_blank" href="<?php echo rwmb_meta('google_calendar_link')?>" class="text txt-sm txt-dark"><u>Google Calendar Link</u></a>   
-                    <a href="<?php echo rwmb_meta('ics_file')?>" target="_blank" class="text txt-sm txt-dark" download><u>Download ICS File</u></a>
+                    <?php
+                        $brochure_url = rwmb_meta('ics_file');
+                        foreach($brochure_url as $brochure){$url = $brochure['url'];}
+                    ?>
+                    <a href="<?php echo $url;?>" target="_blank" class="text txt-sm txt-dark" download><u>Download ICS File</u></a>
                 </div>
             </div>
         </div>
@@ -48,6 +62,7 @@
                     $title = $session_content['title'] ?? '';
                     $content = $session_content['content'] ?? '';
                     $key_points = $session_content['key_points'] ?? '';
+                    $schedule_group = $session_content['schedule_group'] ?? '';
                     if(!empty($title)){
                         echo '<p class="txt-green title txt-lg">'.$title.'</p>';
                     }
@@ -60,6 +75,23 @@
                                 echo '<li class="text txt-md mb-2">'.$points['add_key_point'].'</li>';
                             }
                         echo '</ul><br>';
+                    }
+                    if(!empty($schedule_group)){
+                        foreach($schedule_group as $schedule){
+                            echo '<button class="accordion text txt-bold txt-md txt-dark" style="color:black !important;">'.$schedule["schedule_title"].'</button>';
+                            $schedule_content = $schedule['schedule_content'];
+                    ?>
+                            <div class="panel">
+                                <?php
+                                    echo '<ul>';
+                                    foreach($schedule_content as $content){
+                                        echo '<li class="text txt-md mb-2">'.$content.'</li>';   
+                                    }
+                                    echo '</ul><br>';
+                                ?>
+                            </div>
+                    <?php
+                        }
                     }
                 }
             ?>

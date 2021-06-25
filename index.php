@@ -276,8 +276,8 @@
                 <?php
                         }else{
                 ?>
-                    <div class="expert-cards mt-4 row w-100">
-                        <div class="expert-review-left">
+                    <div class="expert-cards mt-4 row w-100" style="padding-left:40% !important;">
+                        <div class="expert-review-left" style="margin-left:-14% !important;">
                             <p class="txt-blue txt-sm title"><?php echo $person_name.', '.$title.', '.$company?></p>
                             <p class="text txt-thin txt-sm"><?php echo $influencer_comment_group['speaking_on'] ?? '';?></p>
                             <p class="text txt-normal txt-md">“<?php echo $influencer_comment_group['comment'] ?? '';?>”</p>
