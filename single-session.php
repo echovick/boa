@@ -119,7 +119,7 @@
         </div>
         <div class="featured-speakers">
             <p class="txt-white title header">Featured Speakers</p>
-            <p class="text txt-lg w-80 txt-normal txt-dark txt-white">Meet the value chain experts</p>
+            <p class="text txt-lg w-80 txt-normal txt-dark txt-white">Meet the experts who will be discussing the topic</p>
             <div class="row mt-5 pt-4">
                 <?php
                     $add_facilitator_group = rwmb_meta('add_facilitator_group');
@@ -131,9 +131,10 @@
                 ?>
                     <div class="col-lg-3 col-md-3 col-6 text-center mb-3">
                         <img src="<?php echo $image?>" alt="" class="speaker-img">
-                        <p class="txt-dark title mt-3 txt-lg"><?php echo $the_facilitator->person_name?><br> <span class="text txt-md txt-normal"><?php echo $the_facilitator->title.', '.$the_facilitator->company;?></span></p>
+                        <p class="txt-dark title mt-3 txt-md facilitator-info"><?php echo $the_facilitator->person_name?></p>
+                        <p class="text txt-sm txt-normal"><?php echo $the_facilitator->title.', '.$the_facilitator->company;?></p>
                         <!-- <br> -->
-                        <span class="badge-<?php echo strtolower($select_role)?> title txt-sm"><?php echo $select_role?></span>
+                        <span class="badge-<?php if($select_role == 'Moderator'){ echo 'moderator';}else{ echo 'panelist';} ?> title txt-sm"><?php echo $select_role?></span>
                     </div>
                 <?php
                     }

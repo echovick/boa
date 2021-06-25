@@ -367,7 +367,7 @@
                 foreach($add_faq as $faq){
             ?>
                 <button class="accordion text txt-bold txt-sm txt-dark"><?php echo $faq['add_question']?></button>
-                <div class="panel">
+                <div class="panel txt-thin text txt-sm">
                     <p class="txt-thin text txt-sm pl-2"><?php echo $faq['add_answer']?></p>
                 </div>
             <?php
