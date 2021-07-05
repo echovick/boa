@@ -6,6 +6,7 @@
                 $page_snippet = rwmb_meta('page_snippet');
 
                 $show_live_session = rwmb_meta('show_live_session');
+                $select_live_session = rwmb_meta('select_live_session');
                 $add_feature = rwmb_meta('add_feature');
                 $session_card_group = rwmb_meta('session_card_group');
                 $expert_card_group = rwmb_meta('expert_card_group');
@@ -39,30 +40,14 @@
         </div>
         <!-- Live session section -->
         <?php
-            $sessions = new WP_Query(
-                array(
-                    'post_type'=>'session',
-                    'posts_per_page'=>'-1',
-                    'meta_query'=>array(
-                        array(
-                            'key'=>'status',
-                            'value'=> 1,
-                            'compare'=>'='
-                        )
-                    )
-                )
-            );
-            while($sessions->have_posts()):$sessions->the_post();
-                $session_title = rwmb_meta('session_title');
-                $short_snippet = rwmb_meta('short_snippet');
-                $session_image = get_metabox_image_url('session_image');
-                $session_url = rwmb_meta('session_url');
-                $session_url = $session_url['youtube_url'];
-
-                // Get facilitator
-                $add_facilitator_group = rwmb_meta('add_facilitator_group');
-            endwhile;
-
+            $the_session = get_post($select_live_session);
+            $session_title = $the_session->session_title;
+            $short_snippet = $the_session->short_snippet;
+            $session_image = wp_get_attachment_url($the_session->session_image_thumbnail);
+            $session_url = $the_session->session_url;
+            $session_url = $session_url['youtube_url'];
+            // Get facilitator
+            $add_facilitator_group = $the_session->add_facilitator_group;
             if($show_live_session == "Yes"){
         ?>
         <div class="live-session">
@@ -89,10 +74,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="next-session">
+                <!-- <div class="next-session">
                     <p class="title txt-lg"><span class="txt-red title txt-md">Next Session</span><br>
                         How can I make money from Animal Husbandry?</p>
-                </div>
+                </div> -->
             </div>
         </div>
         <?php
@@ -367,7 +352,7 @@
                 foreach($add_faq as $faq){
             ?>
                 <button class="accordion text txt-bold txt-sm txt-dark"><?php echo $faq['add_question']?></button>
-                <div class="panel">
+                <div class="panel txt-thin text txt-sm">
                     <p class="txt-thin text txt-sm pl-2"><?php echo $faq['add_answer']?></p>
                 </div>
             <?php

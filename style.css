@@ -708,13 +708,15 @@ a {
 	background: #ffffff;
 	color: #00aeef;
 }
-.badge-panelist {
+.badge-panelist{
 	border-radius: 10px;
 	padding: 2% 4% 2% 4% !important;
 	background: #22833d;
 	color: #ffffff;
 }
-
+.facilitator-info{
+	line-height: 20px !important;
+}
 .experts-page a[type="button"]{
 	padding: 0 !important;
 	border: 0 !important;
