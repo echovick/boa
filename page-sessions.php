@@ -3,7 +3,7 @@
         <?php
             while(have_posts()):the_post();
                 $page_title = rwmb_meta('page_title');
-                $page_snippet = rwmb_meta('page_snippet');  
+                $page_snippet = rwmb_meta('page_snippet');
             endwhile;
         ?>
         <div class="sessions-page">

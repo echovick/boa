@@ -45,7 +45,7 @@
             $short_snippet = $the_session->short_snippet;
             $session_image = wp_get_attachment_url($the_session->session_image_thumbnail);
             $session_url = $the_session->session_url;
-            $session_url = $session_url['youtube_url'];
+            $session_url = $session_url['youtube_url'] ?? '';
             // Get facilitator
             $add_facilitator_group = $the_session->add_facilitator_group;
             if($show_live_session == "Yes"){
@@ -64,9 +64,11 @@
                         <p class="text txt-normal"><?php echo $short_snippet?></p>
                         <p class="text"><span class="txt-bold">Featuring:</span>
                         <?php
-                            foreach($add_facilitator_group as $facilitator){
-                                $the_facilitator = get_post($facilitator['select_facilitator']);
-                                echo $the_facilitator->person_name.', ';
+                            if($add_facilitator_group){
+                                foreach($add_facilitator_group as $facilitator){
+                                    $the_facilitator = get_post($facilitator['select_facilitator']);
+                                    echo $the_facilitator->person_name.', ';
+                                }
                             }
                         ?></p>
                         <div class="row pl-3 mt-5">

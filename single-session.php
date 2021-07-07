@@ -1,6 +1,7 @@
 <?php echo get_header()?>
-<?php
+<?php   
         while(have_posts()):the_post();
+            $add_download_slide = rwmb_meta('add_download_slide');
     ?>
 <main class="sessions">
     <div class="sessions-page">
@@ -9,23 +10,20 @@
         <p class="text txt-normal txt-lg w-60"><?php echo rwmb_meta('short_snippet')?></p>
         <div class="d-flex desktop">
             <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3">Register to attend</a>
-            <a href="#registerform" class="txt-white txt-sm my-3 bg-blue ask-question txt-bold button mr-3"
-                data-toggle="modal" data-target="#questionform">Ask a Question</a>
+            <a href="#registerform" class="txt-white txt-sm my-3 bg-blue ask-question txt-bold button mr-3" data-toggle="modal" data-target="#questionform">Ask a Question</a>
             <?php
                     $brochure_url = rwmb_meta('upload_brochure');
                     foreach($brochure_url as $brochure){$url = $brochure['url'];}
                     if(!empty($url)){
                 ?>
-            <span class="txt-blue txt-sm pt-4"><a href="<?php echo $url;?>" target="_blank" download><u>Download Session
-                        Brochure</u></a></span>
+            <span class="txt-blue txt-sm pt-4"><a href="<?php echo $url;?>" target="_blank" download><u>Download Session Brochure</u></a></span>
             <?php
                     }
                 ?>
         </div>
         <div class="d-flex mobile">
             <a href="#registerform" class="txt-white txt-sm my-3 bg-blue txt-bold button mr-3">Register to attend</a>
-            <a href="#registerform" class="txt-white txt-sm my-3 bg-blue ask-question txt-bold button mr-3"
-                data-toggle="modal" data-target="#questionform">Ask a Question</a>
+            <a href="#registerform" class="txt-white txt-sm my-3 bg-blue ask-question txt-bold button mr-3" data-toggle="modal" data-target="#questionform">Ask a Question</a>
             <?php
                     $brochure_url = rwmb_meta('upload_brochure');
                     foreach($brochure_url as $brochure){$url = $brochure['url'];}
@@ -40,8 +38,7 @@
         <div style="vertical-align:middle !important;" class="mt-2">
             <span class="txt-blue txt-sm" data-toggle="collapse" href="#demo"><u>Remind Me</u></span>
             <div id="demo" class="collapse mb-3" style="padding:0px !important;">
-                <a target="_blank" href="<?php echo rwmb_meta('google_calendar_link')?>"
-                    class="text txt-sm txt-dark"><u>Google Calendar Link</u></a>
+                <a target="_blank" href="<?php echo rwmb_meta('google_calendar_link')?>" class="text txt-sm txt-dark"><u>Google Calendar Link</u></a>
                 <?php
                         $brochure_url = rwmb_meta('ics_file');
                         foreach($brochure_url as $brochure){$url = $brochure['url'];}
@@ -58,8 +55,7 @@
                 $youtube_url = $session_url['youtube_url'];
                 if(rwmb_meta('status') == 1){
             ?>
-        <iframe style="width:90%;" height="500" src="<?php echo $youtube_url?>" frameborder="1"
-            allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe style="width:90%;" height="500" src="<?php echo $youtube_url?>" frameborder="1" allow="accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <?php
                 }else{
             ?>
@@ -69,6 +65,16 @@
         <?php
                 }
             ?>
+        <div class="download-slide">
+            <?php
+                foreach($add_download_slide['select_file'] as $download_slide){$url = $download_slide['url'];}
+                if(!empty($url)){
+            ?>
+                <a href="<?php echo $url?>" class="title txt-md" target="_blank" download><u><?php echo $add_download_slide['label']?></u></a>
+            <?php
+                }
+            ?>
+        </div>
     </div>
     <div class="items-covered">
         <?php
@@ -120,8 +126,7 @@
                 $date = date_create($select_date);
             ?>
         <p class="txt-green title txt-lg">Schedule</p>
-        <p class="txt-dark text txt-md txt-bold"><i
-                class="fas fa-clock mr-2"></i><?php echo date_format($date,"D").', '.date_format($date,"d").' '.date_format($date,"M").', '.date_format($date,"Y");?>
+        <p class="txt-dark text txt-md txt-bold"><i class="fas fa-clock mr-2"></i><?php echo date_format($date,"D").', '.date_format($date,"d").' '.date_format($date,"M").', '.date_format($date,"Y");?>
         </p>
         <p class="txt-dark text txt-md txt-bold"><i class="fas fa-clock mr-2"></i><?php echo $time?>hrs, GMT + 1</p>
         <p class="txt-dark text txt-md txt-bold"><i class="fas fa-map-marker-alt mr-2"></i><?php echo $location?></p>
@@ -146,8 +151,7 @@
                 <p class="text txt-sm txt-normal"><?php echo $the_facilitator->title.', '.$the_facilitator->company;?>
                 </p>
                 <!-- <br> -->
-                <span
-                    class="badge-<?php if($select_role == 'Moderator'){ echo 'moderator';}else{ echo 'panelist';} ?> title txt-sm"><?php echo $select_role?></span>
+                <span class="badge-<?php if($select_role == 'Moderator'){ echo 'moderator';}else{ echo 'panelist';} ?> title txt-sm"><?php echo $select_role?></span>
             </div>
             <?php
                     }
@@ -175,15 +179,11 @@
                     <?php echo rwmb_meta('session_title')?></p>
                 <form action="" method="POST">
                     <input type="text" name="topic" value="<?php echo rwmb_meta('session_title');?>" hidden>
-                    <textarea name="question" class="w-100 ask-question-textarea text txt-dark txt-sm" id="" cols="30"
-                        rows="10" required>Your question</textarea>
-                    <input type="text" name="email" id="" class="ask-question-input w-100 txt-dark txt-sm text"
-                        placeholder="Your Email Address" required>
+                    <textarea name="question" class="w-100 ask-question-textarea text txt-dark txt-sm" id="" cols="30" rows="10" required>Your question</textarea>
+                    <input type="text" name="email" id="" class="ask-question-input w-100 txt-dark txt-sm text" placeholder="Your Email Address" required>
                     <div class="d-flex justify-content-between">
-                        <button type="submit" name="ask-question"
-                            class="mt-3 button botton-ask-question txt-sm title txt-white">Submit</button>
-                        <button class="mt-3 button botton-ask-question txt-sm title txt-white"
-                            data-dismiss="modal">Cancel</button>
+                        <button type="submit" name="ask-question" class="mt-3 button botton-ask-question txt-sm title txt-white">Submit</button>
+                        <button class="mt-3 button botton-ask-question txt-sm title txt-white" data-dismiss="modal">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -222,8 +222,7 @@
                     <?php echo $person_name.', '.$title.' ('.$company.')'?></p>
                 <p class="text-center txt-text mx-auto txt-md mt-2"><?php echo $person_description?></p>
                 <div class="row">
-                    <a href="<?php echo $linkedin_url?>" target="_blank" class="mx-auto text-center"><i
-                            class="fab fa-linkedin txt-xlg txt-blue"></i></a>
+                    <a href="<?php echo $linkedin_url?>" target="_blank" class="mx-auto text-center"><i class="fab fa-linkedin txt-xlg txt-blue"></i></a>
                 </div>
             </div>
             <div class="modal-footer justify-content-center">
