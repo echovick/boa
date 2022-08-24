@@ -45,7 +45,7 @@
             $short_snippet = $the_session->short_snippet;
             $session_image = wp_get_attachment_url($the_session->session_image_thumbnail);
             $session_url = $the_session->session_url;
-            $session_url = $session_url['youtube_url'];
+            $session_url = $session_url['youtube_url'] ?? '' ?? '';
             // Get facilitator
             $add_facilitator_group = $the_session->add_facilitator_group;
             if($show_live_session == "Yes"){
@@ -65,7 +65,7 @@
                         <p class="text"><span class="txt-bold">Featuring:</span>
                         <?php
                             foreach($add_facilitator_group as $facilitator){
-                                $the_facilitator = get_post($facilitator['select_facilitator']);
+                                $the_facilitator = get_post($facilitator['select_facilitator'] ?? '');
                                 echo $the_facilitator->person_name.', ';
                             }
                         ?></p>
@@ -84,36 +84,41 @@
             }
         ?>
         <!-- Statistics Section -->
-        <div class="stats-section my-4">
-            <div class="row w-90">
-                <?php
-                    foreach($add_feature as $feature){
-                        $title = $feature['title'];
-                        $content = $feature['content'];
-                ?>
-                    <div class="col-md-4 col-lg-4 col-sm-12 col-6 mb-4 pr-4">
-                        <i class="fas fa-star txt-lg"></i>
-                        <p class="txt-green txt-xlg title"><?php echo $title?></p>
-                        <p class="txt-normal txt-sm text"><?php echo $content?></p>
-                    </div>
-                <?php
-                    }
-                ?>
-            </div>
-        </div>
+		<?php
+			if(is_array($add_feature) && count($add_feature) > 0){?>
+			<div class="stats-section my-4">
+				<div class="row w-90">
+					<?php
+						foreach($add_feature as $feature){
+							$title = $feature['title'] ?? '';
+							$content = $feature['content'] ?? '';
+					?>
+						<div class="col-md-4 col-lg-4 col-sm-12 col-6 mb-4 pr-4">
+							<i class="fas fa-star txt-lg"></i>
+							<p class="txt-green txt-xlg title"><?php echo $title?></p>
+							<p class="txt-normal txt-sm text"><?php echo $content?></p>
+						</div>
+					<?php
+						}
+					?>
+				</div>
+			</div>
+			<?php
+			}
+		?>
         <img src="<?php echo get_theme_file_uri('assets/imgs/green-line.png')?>" class="w-100" alt="">
         <!-- Picture info section -->
         <div class="picture-info-section">
             <!-- Sesson card -->
             <?php
-                $session_card_image = $session_card_group['session_card_image'];
+                $session_card_image = $session_card_group['session_card_image'] ?? '';
                 $session_card_image = get_metabox_group_image_url($session_card_group,'session_card_image');
             ?>
             <div class="info-box float-left">
                 <div style="background: url(<?php echo $session_card_image?>);" class="img-bg">
                     <div class="bg-green w-70 px-4 top-box">
-                        <p class="txt-white title txt-lg mb-4"><?php echo $session_card_group['session_card_topic']?></p>
-                        <p class="text txt-normal txt-sm txt-white"><?php echo $session_card_group['session_card_content']?></p>
+                        <p class="txt-white title txt-lg mb-4"><?php echo $session_card_group['session_card_topic'] ?? ''?></p>
+                        <p class="text txt-normal txt-sm txt-white"><?php echo $session_card_group['session_card_content'] ?? ''?></p>
                     </div>
                     <a href="<?php echo site_url('sessions')?>" class="round-button">
                         <i class="fas fa-arrow-right"></i>
@@ -121,14 +126,14 @@
                 </div>
             </div>
             <?php
-                $expert_card_image = $expert_card_group['expert_card_image'];
+                $expert_card_image = $expert_card_group['expert_card_image'] ?? '';
                 $expert_card_image = get_metabox_group_image_url($expert_card_group,'expert_card_image');
             ?>
             <div class="info-box float-right">
                 <div style="background: url(<?php echo $expert_card_image?>);" class="img-bg">
                     <div class="bg-green w-70 px-4 top-box">
-                        <p class="txt-white title txt-lg mb-4"><?php echo $expert_card_group['expert_card_topic']?></p>
-                        <p class="text txt-normal txt-sm txt-white"><?php echo $expert_card_group['expert_card_content']?></p>
+                        <p class="txt-white title txt-lg mb-4"><?php echo $expert_card_group['expert_card_topic'] ?? '' ?? ''?></p>
+                        <p class="text txt-normal txt-sm txt-white"><?php echo $expert_card_group['expert_card_content'] ?? ''?></p>
                     </div>
                     <a href="<?php echo site_url('experts')?>" class="round-button">
                         <i class="fas fa-arrow-right"></i>
@@ -136,14 +141,14 @@
                 </div>
             </div>
             <?php
-                $pitch_card_image = $pitch_card_group['pitch_card_image'];
+                $pitch_card_image = $pitch_card_group['pitch_card_image'] ?? '';
                 $pitch_card_image = get_metabox_group_image_url($pitch_card_group,'pitch_card_image');
             ?>
             <div class="info-box float-left">
                 <div style="background: url(<?php echo $pitch_card_image?>);" class="img-bg">
                     <div class="bg-green w-70 px-4 top-box">
-                        <p class="txt-white title txt-lg mb-4"><?php echo $pitch_card_group['pitch_card_topic']?></p>
-                        <p class="text txt-normal txt-sm txt-white"><?php echo $pitch_card_group['pitch_card_content']?></p>
+                        <p class="txt-white title txt-lg mb-4"><?php echo $pitch_card_group['pitch_card_topic'] ?? ''?></p>
+                        <p class="text txt-normal txt-sm txt-white"><?php echo $pitch_card_group['pitch_card_content'] ?? ''?></p>
                     </div>
                     <a href="<?php echo site_url('pitch')?>" class="round-button">
                         <i class="fas fa-arrow-right"></i>
@@ -174,15 +179,15 @@
                 $id = 0;
                 foreach($add_section_group as $section){
             ?>
-                <div class="accordion title txt-md py-5 txt-white"><?php echo $section['section_title']?></div>
+                <div class="accordion title txt-md py-5 txt-white"><?php echo $section['section_title'] ?? ''?></div>
                 <div class="panel dotted-border-bottom">
                     <div class="row w-100">
                         <?php
-                            $add_session = $section['add_session'];
+                            $add_session = $section['add_session'] ?? '';
                             foreach($add_session as $session){
                                 $id++;
-                                $date_time = $session['date_time'];
-                                $select_Session = $session['select_Session'];
+                                $date_time = $session['date_time'] ?? '';
+                                $select_Session = $session['select_Session'] ?? '';
                                 $the_Session = get_post($select_Session);
                                 $add_facilitator_group = $the_Session->add_facilitator_group;
                                 $google_calendar_link = $the_Session->google_calendar_link;
@@ -204,7 +209,7 @@
                                     <u>
                                         <?php
                                             foreach($add_facilitator_group as $facilitator){
-                                                $the_facilitator = get_post($facilitator['select_facilitator']);
+                                                $the_facilitator = get_post($facilitator['select_facilitator'] ?? '');
                                                 echo $the_facilitator->person_name.', ';
                                             }
                                         ?>
@@ -326,11 +331,11 @@
             <div class="row mt-5 w-100">
                 <?php
                     foreach($add_partner_group as $partner){
-                        $partner_logo = $partner['partner_logo'];
+                        $partner_logo = $partner['partner_logo'] ?? '';
                         $partner_logo = get_metabox_group_image_url($partner,'partner_logo');
                 ?>
                     <div class="col-lg-2 col-md-2 col-6 mb-4">
-                        <a href="<?php echo $partner['partner_url']?>">
+                        <a href="<?php echo $partner['partner_url'] ?? ''?>">
                         <div class="partner-logo-box row w-100">
                             <img src="<?php echo $partner_logo;?>" alt="" class="mx-auto w-70">
                         </div>
@@ -351,9 +356,9 @@
             <?php
                 foreach($add_faq as $faq){
             ?>
-                <button class="accordion text txt-bold txt-sm txt-dark"><?php echo $faq['add_question']?></button>
+                <button class="accordion text txt-bold txt-sm txt-dark"><?php echo $faq['add_question'] ?? ''?></button>
                 <div class="panel txt-thin text txt-sm">
-                    <p class="txt-thin text txt-sm pl-2"><?php echo $faq['add_answer']?></p>
+                    <p class="txt-thin text txt-sm pl-2"><?php echo $faq['add_answer'] ?? ''?></p>
                 </div>
             <?php
                 }

@@ -39,6 +39,8 @@
                             $short_snippet = rwmb_meta('short_snippet');
                             $date = date_create($select_date);
                             $today = date('Y-m-d');
+							$session_period = rwmb_meta('session_period');
+							if($session_period == 'Current'){
                     ?>
                         <div class="col-md-4 col-lg-4 col-sm-6 col-6">
                             <div class="question-session-box w-95 mb-5">
@@ -48,6 +50,7 @@
                             </div>
                         </div>
                     <?php
+						}
                         endwhile;
                     ?>
                 </div>
@@ -73,6 +76,8 @@
             $short_snippet = rwmb_meta('short_snippet');
             $date = date_create($select_date);
             $today = date('Y-m-d');
+			$session_period = rwmb_meta('session_period');
+			if($session_period == 'Current'){
     ?>
     <div id="session<?php echo get_the_id()?>" class="modal bg-blue modal-ask-question fade" role="dialog">
         <div class="modal-dialog bg-blue">
@@ -95,6 +100,7 @@
         </div>
     </div>
     <?php
+			}
         endwhile;
     ?>
 <?php echo get_footer()?>

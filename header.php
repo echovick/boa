@@ -15,13 +15,13 @@
     </head>
     <body>
         <nav class="row w-100 desktop">
-            <div class="col-lg-4 col-md-4">
+            <div class="col-lg-3 col-md-3">
                 <div class="d-flex justify-content-left nav-logo">
                     <a href="<?php echo site_url()?>"><img src="<?php echo get_theme_file_uri('assets/imgs/logos/BoA Logo 1.png')?>" class="mr-3" alt=""></a>
                     <img src="<?php echo get_theme_file_uri('assets/imgs/logos/PSAG-Logo only 1.png')?>" alt="">
                 </div>
             </div>
-            <div class="col-lg-8 col-md-8">
+            <div class="col-lg-9 col-md-9">
                 <div class="d-flex nav-main">
                     <a href="<?php echo site_url('agenda')?>" class="nav-item">  
                         <div class="row title txt-md mb-5">Agenda</div>
@@ -43,6 +43,10 @@
                         <div class="row title txt-md mb-5">Register</div>
                         <div class="row text txt-sm">Reserve your space. 100% free</div>
                     </a>
+					<a href="<?php echo site_url('boa-1-0')?>" class="nav-item">  
+                        <div class="row title txt-md mb-5">BOA 1.0</div>
+                        <div class="row text txt-sm">Business of agriculture debut masterclass</div>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -54,6 +58,7 @@
             </a>
             <!-- Navigation links (hidden by default) -->
             <div id="myLinks">
+				<a href="<?php echo site_url('boa-1-0')?>">BOA 1.0</a>
                 <a href="<?php echo site_url('agenda')?>">Agenda</a>
                 <a href="<?php echo site_url('experts')?>">Speakers</a>
                 <a href="<?php echo site_url('sessions')?>">Sessions</a>

@@ -7,8 +7,9 @@
             <div class="expert-comments-top text-center alert alert-info">
                 <p class="title txt-dark txt-xlg mt-4">Thank You!!</p>
                 <p class="text txt-normal txt-lg w-100">Your registration is confirmed.</p>
-                <p class="title txt-md w-20 mx-auto pt-3 mt-5" style="border-top:1px solid grey;">What Next?</p>
-                <p class="text txt-normal txt-sm mt-3 w-100">Follow us across our social media handles to stay up to date on announcements and updates.</p>
+                <p class="title txt-md w-20 mx-auto pt-3 mt-3" style="border-top:1px solid grey;">What Next?</p>
+				<p class="text txt-normal txt-sm mt-3 w-100">Do you have any questions you would like the facilitators to answer?, <a href="<?php echo site_url('ask-a-question')?>">Click here</a> to ask your questions now</p>
+                <p class="text txt-normal w-20 mx-auto txt-sm mt-3 pt-2"  style="border-top:1px solid grey;">Follow us across our social media handles to stay up to date on announcements and updates.</p>
                 <div class="d-flex justify-content-center">
                     <a href="https://www.facebook.com/psagnigeria" target="_blank"><i class="fab fa-facebook-square txt-xlg txt-blue mx-3"></i></a>
                     <a href="https://www.instagram.com/psag_nigeria" target="_blank"><i class="fab fa-instagram-square txt-xlg txt-blue mx-3"></i></a>

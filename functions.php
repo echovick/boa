@@ -30,7 +30,7 @@
         add_theme_support('title-tag');
     }
 
-     /* 
+    /* 
         ======================================================================
         METABOX SPECIFIC FUNCTIONS BEGIN
         ======================================================================
@@ -93,7 +93,7 @@
             $image = RWMB_Image_Field::file_info( $image_id, array( 'size' => 'thumbnail' ) );
         }
         
-        return $image['full_url'];
+        return $image['full_url'] ?? '';
     }
 
     /* Function to get a file url from a metabox group */

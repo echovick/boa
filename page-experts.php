@@ -4,6 +4,7 @@
             while(have_posts()):the_post();
                 $page_title = rwmb_meta('page_title');
                 $page_snippet = rwmb_meta('page_snippet');
+				$page_id = get_the_ID();
             endwhile;   
         ?>
     <div class="experts-page">
@@ -13,35 +14,37 @@
         </div>
         <div class="row mt-5">
             <?php
-                    $experts = new WP_Query(array(
-                        'post_type'=>'people',
-                        'posts_per_page'=>'-1',
-                        'meta_query'=>array(
-                            array(
-                                'key'=>'status_checkbox',
-                                'value'=>'Expert',
-                                'compare'=>'='
-                            )
-                        )
-                    ));
-                    while($experts->have_posts()):$experts->the_post();
-                        $person_name = rwmb_meta('person_name');
-                        $image = get_metabox_image_url('image');
-                        $title = rwmb_meta('title');
-                        $company = rwmb_meta('company');
-                ?>
-            <div class="col-lg-4 col-md-4 col-6 mb-4">
-                <a data-toggle="modal" data-target="#myModal<?php echo get_the_id();?>">
-                    <p class="txt-green title txt-lg text-center"><?php echo $person_name?></p>
-                    <img src="<?php echo $image?>" alt="" class="w-90">
-                    <p class="text-center txt-dark txt-normal txt-md text mt-3">
-                        <?php echo $title?><br><?php echo $company?>
-                    </p>
-                </a>
-            </div>
-            <?php
-                    endwhile;
-                ?>
+			$experts = new WP_Query(array(
+				'post_type'=>'people',
+				'posts_per_page'=>'-1',
+				'meta_query'=>array(
+					array(
+						'key'=>'status_checkbox',
+						'value'=>'Expert',
+						'compare'=>'='
+					)
+				)
+			));
+			while($experts->have_posts()):$experts->the_post();
+				$person_name = rwmb_meta('person_name');
+				$image = get_metabox_image_url('image');
+				$title = rwmb_meta('title');
+				$company = rwmb_meta('company');
+				$select_period = rwmb_meta('select_period');
+				if(in_array($page_id, $select_period)){?>
+					<div class="col-lg-4 col-md-4 col-6 mb-4">
+						<a data-toggle="modal" data-target="#myModal<?php echo get_the_id();?>">
+							<p class="txt-green title txt-lg text-center"><?php echo $person_name?></p>
+							<img src="<?php echo $image?>" alt="" class="w-90">
+							<p class="text-center txt-dark txt-normal txt-md text mt-3">
+								<?php echo $title?><br><?php echo $company?>
+							</p>
+						</a>
+					</div>
+            		<?php
+				}
+            endwhile;
+            ?>
         </div>
         <!-- Rehister form section -->
         <div class="experts-register">
@@ -73,12 +76,15 @@
         $image = get_metabox_image_url('image');
         $title = rwmb_meta('title');
         $company = rwmb_meta('company');
+		$session_period = rwmb_meta('session_period');
+		$select_period = rwmb_meta('select_period');
         $person_description = rwmb_meta('person_description');
         if(!empty(rwmb_meta('linkedin_url'))){
             $linkedin_url = rwmb_meta('linkedin_url');
         }else{
             $linkedin_url = '#';
         }
+		if(in_array(get_the_ID(), $select_period)){
 ?>
         <div class="modal fade" id="myModal<?php echo get_the_id();?>" role="dialog">
             <div class="modal-dialog">
@@ -100,6 +106,7 @@
             </div>
         </div>
 <?php
+		}
     endwhile;
 ?>
 <?php echo get_footer()?>

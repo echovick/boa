@@ -806,7 +806,9 @@ a {
 .gform_wrapper ul.gfield_checkbox li label{
 	width: auto !important;
 	white-space: normal !important;
-	vertical-align: top !important;
+	/* vertical-align: top !important; */
+	padding-top: 5px;
+	margin-right: 50px;
 }
 
 .info-view{
@@ -868,4 +870,17 @@ a {
 	height: 50px;
 	text-align: center;
 	border-radius: 50%;
+}
+
+.testimonial-content{
+	background: #ffffff;
+	padding: 3% 3% 3% 3%;
+	width: 500px;
+	height: auto;
+	margin-top: -10%;
+	margin-left: 20%;
+}
+
+.testimonial-section{
+	padding: 0% 7% 0% 8%;
 }

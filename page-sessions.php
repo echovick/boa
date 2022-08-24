@@ -33,26 +33,27 @@
                             $session_url = rwmb_meta('session_url');
                             $session_url = $session_url['youtube_url'];
                             $status = rwmb_meta('status');
+							$session_period = rwmb_meta('session_period');
             
                             // Get facilitator
                             $add_facilitator_group = rwmb_meta('add_facilitator_group');
-                        endwhile;
+                        
             
-                        if($status == 1){
-                    ?>
-                    <div class="row w-100">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-4">
-                            <div class="img" style="background:url('<?php echo $session_image;?>');">
-                                <span class="badge-live txt-white bg-red text-center txt-md">Live</span>
-                            </div>
-                            <div class="row w-100 px-4 mt-3">
-                                <p class="title txt-dark txt-dark txt-md"><a href="<?php echo $session_url?>"><?php echo $session_title?></a></p>
-                                <p class="text txt-normal txt-md"><?php echo $short_snippet?></p>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                        }
+                       		if($status == 1 && $session_period == 'Current'){?>
+								<div class="row w-100">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-4">
+										<div class="img" style="background:url('<?php echo $session_image;?>');">
+											<span class="badge-live txt-white bg-red text-center txt-md">Live</span>
+										</div>
+										<div class="row w-100 px-4 mt-3">
+											<p class="title txt-dark txt-dark txt-md"><a href="<?php echo $session_url?>"><?php echo $session_title?></a></p>
+											<p class="text txt-normal txt-md"><?php echo $short_snippet?></p>
+										</div>
+									</div>
+								</div>
+                    			<?php
+                        	}
+						endwhile;
                     ?>
                 </div>
     
@@ -66,11 +67,12 @@
                                 $session_image_thumbnail = get_metabox_image_url('session_image_thumbnail');
                                 $short_snippet = rwmb_meta('short_snippet');
                                 $date = date_create($select_date);
+								$session_period = rwmb_meta('session_period');
                                 $today = date('Y-m-d');
                                 
 
 
-                                if($select_date >= $today){
+                                if($select_date >= $today && $session_period == 'Current'){
                         ?>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-4">
                                 <div class="img" style="background:url('<?php echo $session_image_thumbnail;?>');">
@@ -97,10 +99,11 @@
                                 $session_image = get_metabox_image_url('session_image');
                                 $short_snippet = rwmb_meta('short_snippet');
                                 $date=date_create($select_date);
+								$session_period = rwmb_meta('session_period');
                                 $today = date('Y-m-d');
 
 
-                                if($select_date <= $today){
+                                if($select_date <= $today && $session_period == 'Current'){
                         ?>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-12 mb-4">
                                 <div class="img" style="background:url('<?php echo $session_image;?>');">
